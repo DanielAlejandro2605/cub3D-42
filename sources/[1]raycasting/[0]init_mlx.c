@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [0]init_mlx.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:21:21 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/21 17:01:43 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 static int	ft_init_img(t_cub3D *data)
 {
@@ -51,16 +39,13 @@ int	setup_mlx_env(t_cub3D *data)
 	int	i;
 
 	data->win_x = 1200;
-	data->win_y = 800;
+	data->win_y = 1200;
 	data->mid_x = data->win_x / 2;
 	data->mid_y = data->win_y / 2;
 	data->mlx = mlx_init();
 	ft_bzero(&data->events, sizeof(t_event));
 	if (data->mlx == NULL)
-	{
-		ft_free_map(&data->map);
 		return (1);
-	}
 	data->mlx_win = mlx_new_window(data->mlx, data->win_x, data->win_y, \
 	"cub3D");
 	if (data->mlx_win == NULL)
@@ -69,6 +54,6 @@ int	setup_mlx_env(t_cub3D *data)
 		return (free(data->mlx), free(data->mlx_win), 1);
 	i = 0;
 	while (i < 8)
-		data->wall_textures[i++] = (t_tex){NULL, NULL, 0, 0, 0, 0, 0};
+		data->wall_textures[i++] = (t_texture){NULL, NULL, 0, 0, 0, 0, 0};
 	return (0);
 }

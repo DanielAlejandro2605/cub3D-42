@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [3]hooks_utils.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:21:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/13 16:21:35 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 static t_vec2D	check_step(t_cub3D *data, int map_elem, t_vec2D new_pos)
 {

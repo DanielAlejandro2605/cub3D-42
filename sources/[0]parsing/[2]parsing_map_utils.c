@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [2]parsing_map_utils.c                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:22:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/13 23:31:02 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 static void	ft_scan_around(t_map *map, int y, int x, int error_int)
 {

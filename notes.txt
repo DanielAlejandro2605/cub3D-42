@@ -1,0 +1,51 @@
+Definition projection attributes
+
+1. Player:
+
+a. Player field of view (FOV) -> 60 degrees
+b. Player's position --> Already set for the map
+
+2. Relationship between player and projection plane.
+
+Instead of tracing a ray for every pixel on the screen,
+we can trace for only every vertical column of screen. 
+
+3. For consider the coordinates (N, S, W, E) we cen define
+the direction vertor as :
+
+N = (0, 1)
+E = (1, 0)
+O = (-1, 0)
+S = (0, -1)
+
+
+Raycasting tutorial:
+
+In order to get the first approach of the raycasting algorithm, we need to 
+consider a few of things:
+
+1. The player position can be represented by a 2D vector (e.g x -> 10, y -> 4)
+2. The direction of the player can be represented as well as a vector (I don't have an example)
+3. The camera plane vector (it is not really a plane because we work in 2D, but a line, and is represented with a single vector)
+
+Facts :
+The camera plane should always be perpendicular on the direction vector.
+The camera plane represents the surface of the computer screen, while the direction vector is perpendicular on it and points inside the screen.
+The position of the player, which is a single point, is a point in front of the camera plane. 
+
+A certain ray of a certain x-coordinate of the screen, is then the ray that starts at this player position, and goes through that position 
+on the screen or thus the camera plane.
+
+In the tutorial:
+posX, posY -> Position of the player
+dirX, dirY -> Direction of the player
+planeX, planeY -> Camera plane of the player
+
+Make sure the camera plane is perpendicular to the direction, but you can change the length of it.
+The ratio between the length of the direction and the camera plane determinates the FOV
+
+
+For draw the textures, we need :
+1. Coordinates of hit
+2. Orientation of wall
+3. Distance between player and this intersection (hit)

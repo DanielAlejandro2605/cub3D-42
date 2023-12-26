@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 t_map_list	*new_map_list(char *line, int y)
 {
 	t_map_list	*elem;
+	int			i;
 
+	i = 0;
 	elem = malloc(sizeof(t_map_list));
 	if (!elem)
 		return (NULL);

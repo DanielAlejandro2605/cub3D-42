@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [1]init_raycasting.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:21:29 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/13 16:21:30 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 static void	ft_initialize_player(t_cub3D *data, t_rc *rc)
 {
@@ -33,7 +21,7 @@ static void	ft_initialize_vectors(t_cub3D *data, t_rc *rc)
 		rc->dir_vec = rotate_2d_vector(rc->dir_vec, 0.0);
 	else if (rc->player.direction == 3)
 		rc->dir_vec = rotate_2d_vector(rc->dir_vec, 180.0);
-	rc->scale_map = 50;
+	rc->scale_map = 75;
 	rc->fov = ft_deg_to_rad((double)60);
 	rc->ray_dist = (2 * tan(rc->fov / 2)) / data->win_x;
 }

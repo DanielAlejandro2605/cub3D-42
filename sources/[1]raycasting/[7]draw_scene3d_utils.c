@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [7]draw_scene3d_utils.c                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:21:52 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/13 16:23:37 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 double	vec_length(t_vec2D vec)
 {
@@ -24,8 +12,8 @@ double	dot_prod(t_vec2D vec1, t_vec2D vec2)
 
 int	color_from_texture(t_cub3D *data, int dir, double xper, int y)
 {
-	t_tex	texture;
-	int		x;
+	t_texture	texture;
+	int			x;
 
 	texture = data->wall_textures[dir];
 	if (y > texture.img_height)
@@ -44,7 +32,7 @@ int	ceiling_floor_color(t_cub3D *data, double xper, double yper, int type)
 {
 	int			x;
 	int			y;
-	t_tex		tex;
+	t_texture	tex;
 
 	tex = data->wall_textures[type];
 	if (tex.img)

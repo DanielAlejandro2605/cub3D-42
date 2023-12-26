@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [7]draw_scene3d.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:21:57 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/13 16:23:45 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 void	draw_ceiling(t_cub3D *data, int x, double cosine, t_ray *ray)
 {
@@ -62,6 +50,7 @@ void	loop_draw_wall(t_cub3D *data, int line_height, int x, t_ray *ray)
 {
 	double	texpos;
 	double	step;
+	double	xpercent;
 	t_point	point;
 
 	step = 1.0 * \

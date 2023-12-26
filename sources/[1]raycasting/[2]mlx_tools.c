@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [2]mlx_tools.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:21:32 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/13 16:21:33 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 static inline int	idx(int row, int col, int dim)
 {
@@ -72,5 +60,5 @@ void	draw_square_point(t_cub3D *data, t_vec2D point)
 	t_vec2D	point_screen;
 
 	point_screen = scalar_mult(point, data->rc.scale_map);
-	draw_square(data, (int)point_screen.y, (int)point_screen.x, 4);
+	draw_square(data, (int)point_screen.y, (int)point_screen.x, 4, 5);
 }

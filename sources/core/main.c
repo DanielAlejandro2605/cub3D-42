@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:21:18 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/07/19 18:31:01 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 void	data_init(t_cub3D *data)
 {
@@ -27,17 +15,17 @@ void	data_init(t_cub3D *data)
 	data->ident_coord = NULL;
 	data->ident_fc = NULL;
 	data->map_list = NULL;
-	data->fd = 0;
 }
 
 int	gnl_loop(t_cub3D *data, char *file_name)
 {
 	char	*line;
+	int		fd;
 	char	*str;
 
 	data_init(data);
-	data->fd = open(file_name, O_RDONLY);
-	line = get_next_line(data->fd);
+	fd = open(file_name, O_RDONLY);
+	line = get_next_line(fd);
 	if (!line)
 		return (ft_putstr_fd("Failed to open file!\n", 1), 1);
 	while (line)
@@ -45,12 +33,12 @@ int	gnl_loop(t_cub3D *data, char *file_name)
 		str = NULL;
 		iter_line(data, &str, -1, line);
 		free(line);
-		line = get_next_line(data->fd);
+		line = get_next_line(fd);
 	}
 	free(line);
 	if (check_full_identifier(data) < 6)
 		ft_exit_and_free(data, 1, NULL, IDENT_MISSING);
-	close(data->fd);
+	close(fd);
 	if (ft_check_map(data))
 		return (1);
 	return (0);

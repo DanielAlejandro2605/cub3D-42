@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   [1]parsing_identifier_free.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abravo <abravo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:20:31 by abravo            #+#    #+#             */
-/*   Updated: 2023/07/19 18:29:57 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:04:45 by abravo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3D.h"
+#include "../../includes/cub3D_struct.h"
 
 void	ft_free_fc(void *content)
 {
@@ -47,7 +47,6 @@ void	ft_exit_and_free(t_cub3D *data, int ret, char **str, char *error_msg)
 		ft_lstclear(&data->ident_fc, &ft_free_fc);
 	if (data->map_list)
 		ft_lstclear(&data->map_list, &ft_free_map_list);
-	close (data->fd);
 	exit(ret);
 }
 

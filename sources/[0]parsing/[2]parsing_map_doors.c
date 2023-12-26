@@ -1,16 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   [2]parsing_map_doors.c                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:22:27 by dnieto-c          #+#    #+#             */
-/*   Updated: 2023/06/13 16:22:28 by dnieto-c         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "../../includes/cub3D_struct.h"
 
-#include "../../includes/cub3D.h"
+static void	ft_print_map(t_map *map, int flag)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < map->max_h)
+	{
+		j = 0;
+		while (j < map->max_w)
+		{
+			if (flag == 1)
+				printf("%4d", map->door_state_map[i][j]);
+			else
+				printf("%4f", map->timer_map[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+}
 
 int	get_doors_state_map(t_map *map)
 {
