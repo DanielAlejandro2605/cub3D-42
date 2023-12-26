@@ -1,0 +1,21 @@
+NO ./textures/brickwall.xpm
+SO    ./textures/grass.xpm
+WE       ./textures/stone.xpm
+EA                    ./textures/tnt.xpm
+
+F 20,20,-20
+C 200,200,200
+
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
